@@ -2,10 +2,9 @@
 
 namespace estoque\Http\Controllers;
 
-//use Illuminate\Http\Request;
-use estoque\Http\Requests\loginRequest;
 
 use estoque\Http\Requests;
+use estoque\Http\Requests\loginRequest;
 use estoque\Http\Controllers\Controller;
 
 use Auth;

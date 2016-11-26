@@ -61,7 +61,7 @@ return [
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-            'strict'    => false,
+            'strict'    => true,
         ],
 
         'pgsql' => [
@@ -83,6 +83,18 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'prefix'   => '',
         ],
+        'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => env('DBM_HOST', 'localhost'),
+            'port'     => env('DBM_PORT', 27017),
+            'database' => env('DBM_DATABASE'),
+            'username' => env('DBM_USERNAME'),
+            'password' => env('DBM_PASSWORD'),
+            'options' => [
+                'database' => 'cronos' // sets the authentication database required by mongo 3
+            ]
+],
+
 
     ],
 

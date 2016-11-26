@@ -2,12 +2,15 @@
 
 namespace estoque;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Produto extends Model
+class Produto extends Eloquent 
 {
-	protected $table = 'produtos';
-	public $timestamps = false;
-	protected $fillable = array('nome','descricao','valor','quantidade');
-	protected $guarded = ['id'];
+	protected $connection = 'mongodb';
+	protected $fillable = array(
+								'nome',
+								'descricao',
+								'valor',
+								'quantidade'
+								);
 }

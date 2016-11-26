@@ -12,8 +12,9 @@ class ProdutoController extends Controller{
 	}
 
 	public function lista(){
-		$produtos = Produto::all();
-		return view('produto.listagem')->with('produtos',$produtos);
+
+		// $produtos = Produto::all();
+		return view('produto.listagem', compact('produtos'));
 	}
 
 	public function mostra($id){
@@ -29,9 +30,16 @@ class ProdutoController extends Controller{
 
 	}
 
-	public function adiciona(ProdutoRequest $request){
-
-		Produto::create($request->all());
+	public function adiciona(ProdutoRequest $request)
+	{
+		$data = $request->all();
+		$data['descricao'] = $arrayName = array(
+			'nome' => 'abc',
+			'tamanho' => 'abc',
+			'cor' => 'abc',
+			'estilo' => 'abc',
+		 );
+		Produto::create($data);
 
 		return redirect()->action('ProdutoController@lista')->withInput(Request::only('nome'));
 	}
