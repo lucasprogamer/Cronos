@@ -13,7 +13,7 @@ class ProdutoController extends Controller{
 
 	public function lista(){
 
-		// $produtos = Produto::all();
+		$produtos = Produto::all();
 		return view('produto.listagem', compact('produtos'));
 	}
 

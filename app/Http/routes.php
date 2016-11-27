@@ -58,3 +58,21 @@ Route::get('start', function () {
 			'auth' => 'Auth\AuthController',
 			'password' => 'Auth\PasswordController',
 		]);
+
+
+
+	Route::get('products','ProductController@lista');
+	
+	Route::get('/products/mostra/{id}','ProductController@mostra')->where('id','[0-9]+');
+
+	Route::get('/products/novo','ProductController@novo');
+
+	Route::post('/products/adiciona','ProductController@adiciona');
+
+	Route::get('/products/json','ProductController@listaJson');
+
+	Route::get('/products/remove/{id}', 'ProductController@remove');
+
+	Route::get('/products/editar/{id}','ProductController@editar');
+
+	Route::post('/products/alterar/{id}','ProductController@alterar');
